@@ -1,6 +1,6 @@
 ---
 title: "Hello, world"
-description: "Why I'm leaving platforms behind and running my own site and newsletter, built on Next.js and Resend."
+description: "Why I'm running my own minimal site, with a newsletter built in, instead of a platform."
 date: 2026-09-29
 tags: [meta, newsletter]
 newsletter: true

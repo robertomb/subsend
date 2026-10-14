@@ -9,7 +9,7 @@ import { SubscribeForm } from "@/components/SubscribeForm";
 
 export const metadata: Metadata = {
   title: "Archive",
-  description: `Every issue of ${site.brand}, ${site.author.name}'s newsletter on growth, startups and venture capital.`,
+  description: `Every post on ${site.brand}, by ${site.author.name}, newest first.`,
   alternates: { canonical: "/posts" },
 };
 
@@ -30,7 +30,7 @@ export default function ArchivePage() {
       <JsonLd data={graph(breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Archive", path: "/posts" }]))} />
       <h1>Archive</h1>
       <p className="muted">
-        {posts.length} {posts.length === 1 ? "issue" : "issues"} on growth, startups and venture capital.
+        {posts.length} {posts.length === 1 ? "post" : "posts"}, newest first.
       </p>
       {tags.length > 0 && (
         <ul className="tags small" aria-label="Topics">

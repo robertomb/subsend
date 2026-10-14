@@ -1,15 +1,14 @@
 # Subsend
 
-Your own newsletter and archive, on your own domain. Posts are Markdown in git, the site is static Next.js, and subscribers and sending run on [Resend](https://resend.com) (Contacts, Segments, Broadcasts). No database, no platform.
+A minimal personal website with a newsletter built in. Write posts in Markdown, publish them to your own domain, and send any of them to your subscribers by email. Every post stays in a public archive on your site.
 
-- **Landing page and archive:** a newsletter-first home page, an archive by year, tags, an About page and a colophon.
-- **Email:** double opt-in, React Email templates, one-command broadcasts, and optional email-only issues.
-- **Discoverable:** structured data, OG images, sitemap, full-text RSS, `llms.txt`, and a Markdown copy of every post for AI assistants.
-- **Light:** static HTML, system fonts, light and dark mode.
+- **A minimal personal site:** a home page with a short intro, an About page, an archive by year, tags and a colophon. Static HTML, system fonts, light and dark mode. No database, no platform.
+- **A newsletter built in:** visitors subscribe with double opt-in, and any post goes out by email with one command, through [Resend](https://resend.com). Posts can also be email-only.
+- **Easy to find:** structured data, share images, a sitemap, full-text RSS, `llms.txt`, and a Markdown copy of every post for AI assistants.
 
 ## How much does it cost?
 
-**$0 a month**, plus a domain name (about $10–15 a year), until your list passes 1,000 subscribers.
+**$0 a month**, plus a domain name (about $10–15 a year), until your newsletter passes 1,000 subscribers.
 
 | Service | What it does here | Free tier |
 | --- | --- | --- |
@@ -19,7 +18,7 @@ Your own newsletter and archive, on your own domain. Posts are Markdown in git, 
 | [GitHub](https://github.com/pricing) | Your code and posts, in a private repo | Free |
 
 What that gets you for free:
-- A newsletter with up to **1,000 subscribers**, on your own domain.
+- A personal site on your own domain, with a newsletter of up to **1,000 subscribers**.
 - **Up to 100 new subscribers a day**: each signup sends one confirmation email, which counts against the daily limit of 100.
 - Mail at your own addresses through Resend Inboxes (up to 3).
 - A fast, static site that easily handles hundreds of thousands of page views a month.
@@ -37,7 +36,7 @@ Everything personal lives in a few places:
 
 | Where | What |
 | --- | --- |
-| `site.config.ts` | Name, domain, bio, social links, newsletter copy, sender addresses, incoming-mail choices |
+| `site.config.ts` | Name, domain, bio, social links, home page copy, sender addresses, incoming-mail choices |
 | `content/posts/` | Your posts (see "Writing") |
 | `content/about.md`, `content/colophon.md` | Your About page and "how this is built" page |
 | `public/avatar.jpg` | Your photo, also used for the favicon and share images |
@@ -63,9 +62,9 @@ canonical: "https://…" # optional, if originally published elsewhere
 ---
 ```
 
-Email-only issues and drafts live in your repo, so **keep your site's repo private** if you use them.
+Email-only posts and drafts live in your repo, so **keep your site's repo private** if you use them.
 
-## Sending an issue
+## Sending a post by email
 
 ```bash
 pnpm send <slug> --test       # proof it in your own inbox

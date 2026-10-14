@@ -1,4 +1,4 @@
-// Your newsletter's identity and settings. This is the one file to edit when
+// Your site's identity and settings. This is the one file to edit when
 // you make this project yours: everything SEO-related (metadata, JSON-LD,
 // llms.txt, RSS), the emails and the incoming-mail setup read from here.
 // Your posts and pages live in content/, your photo in public/avatar.jpg.
@@ -6,10 +6,14 @@
 export const site = {
   url: "https://example.com", // your domain, no trailing slash
   brand: "example", // wordmark in the header and site name
+  // What your site is, shown as "<brand> · <descriptor> by <name>" above the
+  // home page headline and on its share image. E.g. "a personal site",
+  // "a newsletter", "notes".
+  descriptor: "a personal site",
   name: "Your Name", // used in <title> templates and bylines
-  title: "example — A newsletter by Your Name", // home page <title>
+  title: "Your Name — Writing, notes and a newsletter", // home page <title>
   description:
-    "Your Name's newsletter on the topics you write about. One or two sentences; this is what search engines show.",
+    "Your Name's personal site: writing on the topics you care about, with a newsletter. One or two sentences; this is what search engines show.",
   locale: "en_US",
   language: "en",
   author: {
@@ -35,9 +39,9 @@ export const site = {
     },
   },
   newsletter: {
-    // Landing page copy.
-    headline: "Notes on the things I'm learning.",
-    pitch: "A short paragraph on what you write about and why someone should subscribe.",
+    // The intro at the top of the home page, above the subscribe form.
+    headline: "Hi, I'm Your Name. I write about the things I'm learning.",
+    pitch: "A short paragraph about you and what you write about. New posts can also arrive by email.",
     // Optional: shown under the subscribe form, e.g. "A new issue every other week."
     cadence: "",
     // Send from a dedicated subdomain so your newsletter's reputation stays

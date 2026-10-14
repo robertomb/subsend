@@ -9,8 +9,8 @@ import { HeroSubscribe } from "@/components/SubscribeForm";
 
 const LATEST = 8;
 
-// The home page is the newsletter's front door: pitch and form first,
-// then the best issues, then the latest ones leading into the archive.
+// The home page: a short intro and the subscribe form first,
+// then the best posts, then the latest ones leading into the archive.
 export default function Home() {
   const posts = getPublicPosts();
   const featured = posts.filter((p) => p.featured).slice(0, 3);
@@ -22,7 +22,7 @@ export default function Home() {
       <section className="hero">
         <Image src={site.author.photo} alt={`Portrait of ${site.author.name}`} width={88} height={88} priority />
         <p className="eyebrow">
-          {site.brand} · a newsletter by <Link href="/about">{site.author.name}</Link>
+          {site.brand} · {site.descriptor} by <Link href="/about">{site.author.name}</Link>
         </p>
         <h1>{site.newsletter.headline}</h1>
         <p className="lede">{site.newsletter.pitch}</p>
@@ -41,7 +41,7 @@ export default function Home() {
       {posts.length > 0 && (
         <section aria-labelledby="latest">
           <h2 className="section-title" id="latest">
-            Latest issues
+            Latest posts
           </h2>
           <PostList posts={posts.slice(0, LATEST)} descriptions />
           <p className="small archive-link">

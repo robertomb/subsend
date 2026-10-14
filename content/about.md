@@ -1,6 +1,6 @@
 Hi, I'm Your Name. One or two sentences about who you are and what you work on.
 
-I started this newsletter to write down what I'm learning about the topics you cover. Say why you write and who it's for.
+This site is where I write about the topics you cover. Say why you write and who it's for. If you'd like new posts by email, you can subscribe.
 
 ## Where I've worked
 
