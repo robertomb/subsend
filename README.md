@@ -100,6 +100,7 @@ Start your site from this repo (GitHub's **Use this template**, or clone it), th
 
 ```bash
 git remote add upstream https://github.com/robertomb/subsend.git
+git config pull.rebase false                          # always merge updates, never rebase your site's history
 git pull upstream main --allow-unrelated-histories   # first time only
 git pull upstream main                                # later updates
 ```
