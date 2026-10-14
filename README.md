@@ -7,6 +7,30 @@ Your own newsletter and archive, on your own domain. Posts are Markdown in git, 
 - **Discoverable:** structured data, OG images, sitemap, full-text RSS, `llms.txt`, and a Markdown copy of every post for AI assistants.
 - **Light:** static HTML, system fonts, light and dark mode.
 
+## How much does it cost?
+
+**$0 a month**, plus a domain name (about $10–15 a year), until your list passes 1,000 subscribers.
+
+| Service | What it does here | Free tier |
+| --- | --- | --- |
+| [Resend](https://resend.com/pricing) | Subscribers, broadcasts, confirmation emails, inboxes | **1,000 contacts** for newsletters (marketing is priced by contacts, not by emails sent), plus **3,000 transactional emails a month, max 100 a day** (the double opt-in confirmations), 3 domains, 3 inboxes, 1 webhook. No marketing analytics |
+| [Vercel](https://vercel.com/pricing) | Hosts the site | Hobby plan: 100 GB of traffic and 1M function calls a month, 50K analytics events. **Personal, non-commercial use only** |
+| [Cloudflare](https://www.cloudflare.com/plans/) | DNS (optional; any DNS provider works) | Free |
+| [GitHub](https://github.com/pricing) | Your code and posts, in a private repo | Free |
+
+What that gets you for free:
+- A newsletter with up to **1,000 subscribers**, on your own domain.
+- **Up to 100 new subscribers a day**: each signup sends one confirmation email, which counts against the daily limit of 100.
+- Mail at your own addresses through Resend Inboxes (up to 3).
+- A fast, static site that easily handles hundreds of thousands of page views a month.
+
+When you'll need to pay:
+- **More than 1,000 subscribers:** Resend's marketing plan starts at $40/month for 5,000 contacts.
+- **More than 100 signups a day,** say after a post goes viral: Resend Pro (transactional) is $20/month and removes the daily cap.
+- **Making money from it** (paid subscriptions, sponsorships): Vercel's Hobby plan is for non-commercial use, so move to Pro at $20/month, or host somewhere else.
+
+Free-tier limits change. Check each pricing page before you rely on them (last checked October 2026).
+
 ## Making it yours
 
 Everything personal lives in a few places:
