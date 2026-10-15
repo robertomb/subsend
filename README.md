@@ -2,7 +2,7 @@
 
 A minimal personal website with a newsletter built in. Write posts in Markdown, publish them to your own domain, and send any of them to your subscribers by email. Every post stays in a public archive on your site.
 
-- **A minimal personal site:** a home page with a short intro, an About page, an archive by year, tags and a colophon. Static HTML, system fonts, light and dark mode. No database, no platform.
+- **A minimal personal site:** a home page with a short intro, an About page, an archive by year, tags, and any extra pages you add in Markdown. Static HTML, system fonts, light and dark mode. No database, no platform.
 - **A newsletter built in:** visitors subscribe with double opt-in, and any post goes out by email with one command, through [Resend](https://resend.com). Posts can also be email-only.
 - **Easy to find:** structured data, share images, a sitemap, full-text RSS, `llms.txt`, and a Markdown copy of every post for AI assistants.
 
@@ -38,7 +38,8 @@ Everything personal lives in a few places:
 | --- | --- |
 | `site.config.ts` | Name, domain, bio, social links, home page copy, sender addresses, incoming-mail choices |
 | `content/posts/` | Your posts (see "Writing") |
-| `content/about.md`, `content/colophon.md` | Your About page and "how this is built" page |
+| `content/about.md` | Your About page |
+| `content/pages/` | Extra pages, like `/now` or `/uses` (see "Pages") |
 | `public/avatar.jpg` | Your photo, also used for the favicon and share images |
 
 Then follow "Setup".
@@ -63,6 +64,26 @@ canonical: "https://…" # optional, if originally published elsewhere
 ```
 
 Email-only posts and drafts live in your repo, so **keep your site's repo private** if you use them.
+
+## Pages
+
+Every `content/pages/<slug>.md` becomes a page at `/<slug>`. Use them for things like a [now page](https://nownownow.com/about), `/uses` or `/colophon`. There's an example draft in `content/pages/now.md`.
+
+```yaml
+---
+title: "Now"
+description: "What I'm focused on right now."  # meta description and llms.txt summary
+nav: true          # optional: link it in the header menu
+navLabel: "Now"    # optional: menu label, if it differs from the title
+order: 10          # optional: menu order, lowest first
+eyebrow: "Colophon" # optional: small label above the title
+subscribe: false   # optional: show the subscribe box at the end
+draft: false       # optional: drafts show in `pnpm dev` only
+updated: 2026-10-15 # optional: last-modified date for the sitemap
+---
+```
+
+Pages go into the sitemap and `llms.txt` automatically. If you add a page called `colophon`, the footer links to it ("Here's how it's built") instead of to Subsend.
 
 ## Sending a post by email
 

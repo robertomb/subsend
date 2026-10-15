@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/lib/site";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Colophon } from "@/components/Colophon";
+import { navPages } from "@/lib/pages";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -52,6 +53,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <nav aria-label="Main">
             <Link href="/posts">Archive</Link>
             <Link href="/about">About</Link>
+            {navPages().map((p) => (
+              <Link key={p.slug} href={`/${p.slug}`}>
+                {p.navLabel ?? p.title}
+              </Link>
+            ))}
             <Link href="/#subscribe" className="nav-cta">
               Subscribe
             </Link>

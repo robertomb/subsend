@@ -1,6 +1,7 @@
 import { site, absoluteUrl, sameAs } from "./site";
 import { getPublicPosts, lastModified, postPath, type Post } from "./posts";
 import { isoDate } from "./format";
+import { getPages } from "./pages";
 
 /** A post as clean, self-describing Markdown, for LLMs and anyone who wants the source. */
 export function postToMarkdown(post: Post) {
@@ -45,7 +46,9 @@ export function llmsTxt() {
     "## About",
     "",
     `- [About ${site.author.name}](${absoluteUrl("/about")})`,
-    `- [How this newsletter is built](${absoluteUrl("/colophon")})`,
+    ...getPages()
+      .filter((p) => !p.draft)
+      .map((p) => `- [${p.title}](${absoluteUrl(`/${p.slug}`)}): ${p.description}`),
     `- [RSS feed](${absoluteUrl("/rss.xml")})`,
     `- [Full text of all posts](${absoluteUrl("/llms-full.txt")})`,
     ...sameAs.map((href) => `- [${new URL(href).hostname}](${href})`),
